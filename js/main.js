@@ -24,7 +24,7 @@ var player;
 var controles;
 var groundLayer, coinLayer;
 var text;
-var score = 0;
+var score = 69;
 var enemigos = [];
 
 function preload() {
@@ -194,5 +194,15 @@ function update(time, delta) {
     }
     if(!player.body.onFloor()) {
         player.anims.play('falling', true);
+    }
+
+    if(score > 70) {
+        let msgGanado = this.add.text(20, 160, 
+            "HAS GANADO!\nPresiona F5 para reiniciar"
+            , {
+            fontSize: '20px',
+            fill: '#0F0'
+        });
+        msgGanado.setScrollFactor(0);
     }
 }
