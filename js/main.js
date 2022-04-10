@@ -109,9 +109,17 @@ function create() {
     // Controles
     controles = this.input.keyboard.createCursorKeys();
 
-    // Crear enemigo
-    crearEnemigo(192,800, this);
-    crearEnemigo(320,800, this);
+    // Crear enemigos
+    map.forEachTile((tile) => {
+        if(tile.index == 18) {
+            crearEnemigo(tile.x*32, tile.y*32, this);
+        }
+    }, layer='Enemigos');
+    // crearEnemigo(192,800, this);
+    // crearEnemigo(320,800, this);
+
+    console.log(map);
+    map.replaceByIndex(18);
 }
 
 function crearEnemigo(x, y, escenario) {
