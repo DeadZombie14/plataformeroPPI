@@ -24,7 +24,7 @@ var player;
 var controles;
 var groundLayer, coinLayer;
 var text;
-var score = 69;
+var score = 0;
 var enemigos = [];
 
 function preload() {
